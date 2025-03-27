@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   async sendData() {
-    if (this.prompt) {
+    if (this.prompt && !this.loading) {
       this.loading = true;
       const data = this.prompt;
       this.prompt = '';

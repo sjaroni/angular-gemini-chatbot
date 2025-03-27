@@ -26,7 +26,10 @@
       id="message-input"
       placeholder="Type a message..."
       [(ngModel)]="prompt"
+      (keyup.enter)="sendData()"
+      [disabled]="loading"
+      autocomplete="off"
     />
-    <button id="send-button" (click)="sendData()" (keydown.enter)="sendData()">Send</button>
+    <button id="send-button" (click)="sendData()" [disabled]="loading">Send</button>
   </footer>
 </div>
